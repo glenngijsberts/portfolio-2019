@@ -59,7 +59,15 @@
     "test": "node scripts/test.js"
   },
   "eslintConfig": {
-    "extends": "react-app"
+    "extends": "react-app",
+    "rules": {
+      "indent": ["error", 4],
+      "react/jsx-indent": ["error", 4],
+      "semi": ["error", "never"],
+      "arrow-parens": ["error", "always"],
+      "quotes": ["error", "single"],
+      "react/no-unused-state": ["error", "always"]
+    }
   },
   "browserslist": [
     ">0.2%",
