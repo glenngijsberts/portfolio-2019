@@ -1,7 +1,9 @@
 import React, { Component } from 'react'
 import styled from 'styled-components'
-import { colorPrimary } from './styles/theme'
+import { colorPrimary, colorPrimaryDarker, borderRadius } from './styles/theme'
 import PersonalSection from './components/PersonalSection'
+import Services from './components/Services'
+import services from './assets/services'
 
 const HeaderBar = styled.header`
     padding: 16px 0;
@@ -9,10 +11,11 @@ const HeaderBar = styled.header`
     justify-content: space-between;
     align-items: center;
 
-    h2 {
+    h1 {
         margin: 0;
         color: ${colorPrimary};
-        font-weight: black;
+        font-weight: 500;
+        font-size: 24px;
     }
 `
 
@@ -20,7 +23,9 @@ const HeaderNav = styled.nav`
     ul {
         list-style: none;
         display: flex;
-        padding-inline-start: 0px;
+        padding-inline-start: 0;
+        margin-block-start: 0;
+        margin-block-end: 0;
 
         li {
             margin-left: 32px;
@@ -29,7 +34,6 @@ const HeaderNav = styled.nav`
                 color: ${colorPrimary};
                 font-weight: 500;
                 cursor: pointer;
-                font-weight: bold;
                 text-decoration: none;
             }
         }
@@ -49,17 +53,20 @@ class App extends Component {
         return (
             <MainContent>
                 <HeaderBar>
-                    <h2>
-                        Glenn Gijsberts <span role="img" aria-label="Welcome">✌️</span>
-                    </h2>
+                    <h1>
+                        Glenn Gijsberts{' '}
+                        <span role="img" aria-label="Welcome">
+                            ✌️
+                        </span>
+                    </h1>
 
-                    <HeaderNav>
+                    {/* <HeaderNav>
                         <ul>
                             <li>
                                 <a href="#">MENU</a>
                             </li>
                         </ul>
-                    </HeaderNav>
+                    </HeaderNav> */}
                 </HeaderBar>
 
                 <PersonalSection
@@ -73,6 +80,8 @@ class App extends Component {
                     verschillende projecten. Ik studeer daarnaast Communication
                     and Multimedia Design in Den Haag.
                 </PersonalSection>
+
+                <Services services={services} />
             </MainContent>
         )
     }
