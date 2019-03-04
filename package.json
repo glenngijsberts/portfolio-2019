@@ -63,27 +63,27 @@
     "extends": "react-app",
     "rules": {
       "indent": [
-        "error",
+        1,
         4
       ],
       "react/jsx-indent": [
-        "error",
+        1,
         4
       ],
       "semi": [
-        "error",
+        1,
         "never"
       ],
       "arrow-parens": [
-        "error",
+        1,
         "always"
       ],
       "quotes": [
-        "error",
+        1,
         "single"
       ],
       "react/no-unused-state": [
-        "error",
+        1,
         "always"
       ]
     }
