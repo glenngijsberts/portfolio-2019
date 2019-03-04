@@ -107,6 +107,26 @@ const MainContent = styled.main`
     position: relative;
 `
 
+const FooterSection = styled.footer`
+    padding-top: 32px;
+    padding-bottom: 32px;
+    text-align: center;
+
+    p {
+        color: white;
+
+        a {
+            text-decoration: none;
+            color: ${colorPrimaryDarker};
+        }
+    }
+
+    @media (min-width: 768px) {
+        padding-top: 64px;
+        padding-bottom: 64px;
+    }
+`
+
 class App extends Component {
     onClick = () => {
         console.log('clicked')
@@ -193,6 +213,11 @@ class App extends Component {
                         </div>
                     </div>
                 </WorkSection>
+
+                <FooterSection>
+                    <p>Deze website is gemaakt met veel.. <span role="img" aria-label="Pizza">️🍕</span> Hosted on <a href="https://https://www.netlify.com/" target="_blank" rel="noopener noreferrer">Netlify</a></p>
+                    <p>Contact? Dat kan op <strong>glenngijsberts95@gmail.com</strong>. Thanks!</p>
+                </FooterSection>
             </MainContent>
         )
     }
