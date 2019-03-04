@@ -5,6 +5,9 @@ import PersonalSection from './components/PersonalSection'
 import Services from './components/Services'
 import services from './assets/services'
 
+import portfolioTicketSwap from './assets/portfolio-ticketswap.png'
+import portfolioSqits from './assets/portfolio-sqits.png'
+
 const HeaderBar = styled.header`
     padding: 16px 0;
     display: flex;
@@ -37,6 +40,66 @@ const HeaderNav = styled.nav`
                 text-decoration: none;
             }
         }
+    }
+`
+
+const WorkSection = styled.section`
+    padding-top: 32px;
+    padding-bottom: 32px;
+
+    h2 {
+        color: ${colorPrimary};
+        font-size: 32px;
+        margin-bottom: 16px;
+    }
+
+    p {
+        color: white;
+        text-align: justify;
+        margin: 0;
+        max-width: 600px;
+        margin-bottom: 32px;
+    }
+
+    .work {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-gap: 32px;
+
+        h3 {
+            margin: 0 0 16px 0;
+            color: ${colorPrimary};
+            font-size: 16px;
+        }
+
+        p {
+            margin: 0;
+            color: white;
+            text-align: justify;
+            margin-bottom: 16px;
+        }
+
+        a {
+            text-decoration: none;
+            color: ${colorPrimaryDarker};
+        }
+
+        img {
+            width: 100%;
+            height: auto;
+            border-radius: ${borderRadius};
+            margin-bottom: 16px;
+        }
+
+        @media(min-width: 768px) {
+            grid-template-columns: 1fr 1fr;
+            grid-gap: 48px;
+        }
+    }
+
+    @media (min-width: 768px) {
+        padding-top: 64px;
+        padding-bottom: 64px;
     }
 `
 
@@ -82,6 +145,54 @@ class App extends Component {
                 </PersonalSection>
 
                 <Services services={services} />
+
+                <WorkSection>
+                    <div className="work">
+                        <div>
+                            <img
+                                src={portfolioTicketSwap}
+                                alt="Internship TicketSwap"
+                            />
+                            <h3>Internship TicketSwap</h3>
+                            <p>
+                                Van september 2018 tot aan februari 2019 heb ik
+                                stage gelopen bij TicketSwap. Ik heb meegeholpen
+                                met de front-end development van de website. Ik
+                                werkte samen in een SCRUM team met verschillende
+                                disciplines. Technieken die ik ingezet heb zijn
+                                onder andere GraphQL en Cypress.
+                            </p>
+                            <a
+                                href="https://www.ticketswap.nl"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                Bezoek de website &rarr;
+                            </a>
+                        </div>
+
+                        <div>
+                            <img src={portfolioSqits} alt="Sqits" />
+                            <h3>Front-end development Sqits</h3>
+                            <p>
+                                Ik ben verantwoordelijk voor de front-end
+                                development binnen de projecten van Sqits. Op
+                                het moment zijn we bezig met een maatwerk
+                                applicatie geschreven in het JavaScript
+                                framework Vue en ben ik bezig met het vernieuwen
+                                van de huidige website waarbij we Nuxt
+                                gebruiken.
+                            </p>
+                            <a
+                                href="https://www.sqits.nl"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                Bezoek de website &rarr;
+                            </a>
+                        </div>
+                    </div>
+                </WorkSection>
             </MainContent>
         )
     }
