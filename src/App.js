@@ -105,6 +105,8 @@ const WorkSection = styled.section`
 
 const MainContent = styled.main`
     position: relative;
+    max-width: 1200px;
+    margin: 0 auto;
 `
 
 const FooterSection = styled.footer`
