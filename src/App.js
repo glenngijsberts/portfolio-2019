@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import styled from 'styled-components'
+import ScrollableAnchor, { goToAnchor } from 'react-scrollable-anchor'
 import { colorPrimary, colorPrimaryDarker, borderRadius } from './styles/theme'
 import PersonalSection from './components/PersonalSection'
 import Services from './components/Services'
@@ -130,10 +131,6 @@ const FooterSection = styled.footer`
 `
 
 class App extends Component {
-    onClick = () => {
-        console.log('clicked')
-    }
-
     render() {
         return (
             <MainContent>
@@ -156,7 +153,7 @@ class App extends Component {
 
                 <PersonalSection
                     title="Front-end developer & interaction design student"
-                    onClick={this.onClick}
+                    onClick={() => goToAnchor('work')}
                 >
                     Als front-end developer ligt mijn kracht in het bouwen van
                     user interfaces en moderne, gebruiksvriendelijke
@@ -168,53 +165,55 @@ class App extends Component {
 
                 <Services services={services} />
 
-                <WorkSection>
-                    <div className="work">
-                        <div>
-                            <img
-                                src={portfolioTicketSwap}
-                                alt="Internship TicketSwap"
-                            />
-                            <h3>Internship TicketSwap</h3>
-                            <p>
-                                Van september 2018 tot aan februari 2019 heb ik
-                                stage gelopen bij TicketSwap. Ik heb meegeholpen
-                                met de front-end development van de website. Ik
-                                werkte samen in een SCRUM team met verschillende
-                                disciplines. Technieken die ik ingezet heb zijn
-                                onder andere GraphQL en Cypress.
-                            </p>
-                            <a
-                                href="https://www.ticketswap.nl"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                            >
-                                Bezoek de website &rarr;
-                            </a>
-                        </div>
+                <ScrollableAnchor id={'work'}>
+                    <WorkSection>
+                        <div className="work">
+                            <div>
+                                <img
+                                    src={portfolioTicketSwap}
+                                    alt="Internship TicketSwap"
+                                />
+                                <h3>Internship TicketSwap</h3>
+                                <p>
+                                    Van september 2018 tot aan februari 2019 heb ik
+                                    stage gelopen bij TicketSwap. Ik heb meegeholpen
+                                    met de front-end development van de website. Ik
+                                    werkte samen in een SCRUM team met verschillende
+                                    disciplines. Technieken die ik ingezet heb zijn
+                                    onder andere GraphQL en Cypress.
+                                </p>
+                                <a
+                                    href="https://www.ticketswap.nl"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                >
+                                    Bezoek de website &rarr;
+                                </a>
+                            </div>
 
-                        <div>
-                            <img src={portfolioSqits} alt="Sqits" />
-                            <h3>Front-end development Sqits</h3>
-                            <p>
-                                Ik ben verantwoordelijk voor de front-end
-                                development binnen de projecten van Sqits. Op
-                                het moment zijn we bezig met een maatwerk
-                                applicatie geschreven in het JavaScript
-                                framework Vue en ben ik bezig met het vernieuwen
-                                van de huidige website waarbij we Nuxt
-                                gebruiken.
-                            </p>
-                            <a
-                                href="https://www.sqits.nl"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                            >
-                                Bezoek de website &rarr;
-                            </a>
+                            <div>
+                                <img src={portfolioSqits} alt="Sqits" />
+                                <h3>Front-end development Sqits</h3>
+                                <p>
+                                    Ik ben verantwoordelijk voor de front-end
+                                    development binnen de projecten van Sqits. Op
+                                    het moment zijn we bezig met een maatwerk
+                                    applicatie geschreven in het JavaScript
+                                    framework Vue en ben ik bezig met het vernieuwen
+                                    van de huidige website waarbij we Nuxt
+                                    gebruiken.
+                                </p>
+                                <a
+                                    href="https://www.sqits.nl"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                >
+                                    Bezoek de website &rarr;
+                                </a>
+                            </div>
                         </div>
-                    </div>
-                </WorkSection>
+                    </WorkSection>
+                </ScrollableAnchor>
 
                 <FooterSection>
                     <p>Deze website is gemaakt met veel.. <span role="img" aria-label="Pizza">️🍕</span> Hosted on <a href="https://https://www.netlify.com/" target="_blank" rel="noopener noreferrer">Netlify</a></p>
