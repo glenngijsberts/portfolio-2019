@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { colorPrimary } from '../../styles/theme'
+import { colorPrimary, borderRadius, colorPrimaryDarker } from '../../styles/theme'
 import Button from '../Button'
 
 export const PersonalSection = styled.section`
@@ -35,6 +35,33 @@ export const PersonalSection = styled.section`
     }
 `
 
+export const StyledLink = styled.a`
+    font-size: 16px;
+    position: relative;
+    font-family: inherit;
+    font-weight: 400;
+    text-align: center;
+    border: none;
+    padding: 16px 24px;
+    display: inline-flex;
+    vertical-align: middle;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    background-color: ${(props) => props.ghost ? 'transparent' : colorPrimary};
+    border: 1px solid ${colorPrimary};
+    border-radius: ${borderRadius};
+    color: white;
+    cursor: pointer;
+    transition-property: all;
+    transition-duration: 0.5s;
+    transition-timing-function: ease-out;
+
+    &:hover, &:focus {
+        background-color: ${(props) => props.ghost ? colorPrimary : colorPrimaryDarker};
+    }
+`
+
 export const ButtonGroup = styled.div`
     display: grid;
     grid-gap: 16px;
@@ -63,7 +90,7 @@ const PersonalSectionWrapper = (props) => {
                     <Button onClick={onClick} ghost={true}>
                         Bekijk mijn werk
                     </Button>
-                    <Button onClick={onClick}>Lees mijn blogs</Button>
+                    <StyledLink href="https://medium.com/@glenngijsberts" target="_blank">Lees mijn blogs</StyledLink>
                 </ButtonGroup>
             </div>
         </PersonalSection>
