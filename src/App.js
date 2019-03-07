@@ -117,11 +117,21 @@ const FooterSection = styled.footer`
 
     p {
         color: white;
+        margin-top: 0px;
 
         a {
             text-decoration: none;
             color: ${colorPrimaryDarker};
         }
+    }
+
+    .links {
+        a {
+            margin-left: 8px;
+            margin-right: 8px;
+        }
+
+        margin-bottom: 0;
     }
 
     @media (min-width: 768px) {
@@ -218,6 +228,11 @@ class App extends Component {
                 <FooterSection>
                     <p>Deze website is gemaakt met veel.. <span role="img" aria-label="Pizza">️🍕</span> Hosted on <a href="https://https://www.netlify.com/" target="_blank" rel="noopener noreferrer">Netlify</a></p>
                     <p>Contact? Dat kan op <strong>glenngijsberts95@gmail.com</strong>. Thanks!</p>
+                    <p className="links">
+                        <a href="https://twitter.com/glenngijsberts" target="_blank" rel="noopener noreferrer">Twitter</a>
+                        <a href="https://medium.com/@glenngijsberts" target="_blank" rel="noopener noreferrer">Medium</a>
+                        <a href="https://www.linkedin.com/in/glenn-gijsberts-0341a463" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                    </p>
                 </FooterSection>
             </MainContent>
         )
