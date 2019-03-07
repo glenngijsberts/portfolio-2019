@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import styled from 'styled-components'
 import ScrollableAnchor, { goToAnchor } from 'react-scrollable-anchor'
+import ReactGA from 'react-ga'
 import { colorPrimary, colorPrimaryDarker, borderRadius } from './styles/theme'
 import PersonalSection from './components/PersonalSection'
 import Services from './components/Services'
@@ -8,6 +9,8 @@ import services from './assets/services'
 
 import portfolioTicketSwap from './assets/portfolio-ticketswap.png'
 import portfolioSqits from './assets/portfolio-sqits.png'
+
+ReactGA.initialize('UA-135828722-1')
 
 const HeaderBar = styled.header`
     padding: 16px 0;
@@ -141,6 +144,19 @@ const FooterSection = styled.footer`
 `
 
 class App extends Component {
+    componentDidMount = () => {
+        ReactGA.pageview(window.location.pathname + window.location.search)
+    }
+
+    goToWork = () => {
+        ReactGA.event({
+            category: 'Intro',
+            action: 'Clicked on see work button'
+        })
+
+        goToAnchor('work')
+    }
+
     render() {
         return (
             <MainContent>
@@ -163,7 +179,7 @@ class App extends Component {
 
                 <PersonalSection
                     title="Front-end developer & interaction design student"
-                    onClick={() => goToAnchor('work')}
+                    onClick={() => this.goToWork()}
                 >
                     Als front-end developer ligt mijn kracht in het bouwen van
                     user interfaces en moderne, gebruiksvriendelijke
@@ -196,6 +212,10 @@ class App extends Component {
                                     href="https://www.ticketswap.nl"
                                     target="_blank"
                                     rel="noopener noreferrer"
+                                    onClick={() => ReactGA.event({
+                                        category: 'Work',
+                                        action: 'Clicked on TicketSwap link'
+                                    })}
                                 >
                                     Bezoek de website &rarr;
                                 </a>
@@ -217,6 +237,10 @@ class App extends Component {
                                     href="https://www.sqits.nl"
                                     target="_blank"
                                     rel="noopener noreferrer"
+                                    onClick={() => ReactGA.event({
+                                        category: 'Work',
+                                        action: 'Clicked on Sqits link'
+                                    })}
                                 >
                                     Bezoek de website &rarr;
                                 </a>

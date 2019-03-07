@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import ReactGA from 'react-ga'
 import { colorPrimary, borderRadius, colorPrimaryDarker } from '../../styles/theme'
 import Button from '../Button'
 
@@ -90,7 +91,10 @@ const PersonalSectionWrapper = (props) => {
                     <Button onClick={onClick} ghost={true}>
                         Bekijk mijn werk
                     </Button>
-                    <StyledLink href="https://medium.com/@glenngijsberts" target="_blank">Lees mijn blogs</StyledLink>
+                    <StyledLink href="https://medium.com/@glenngijsberts" target="_blank" onClick={() => ReactGA.event({
+                        category: 'Intro',
+                        action: 'Clicked on blogs button'
+                    })}>Lees mijn blogs</StyledLink>
                 </ButtonGroup>
             </div>
         </PersonalSection>
