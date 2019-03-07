@@ -11,6 +11,7 @@ import portfolioTicketSwap from './assets/portfolio-ticketswap.png'
 import portfolioSqits from './assets/portfolio-sqits.png'
 
 ReactGA.initialize('UA-135828722-1')
+ReactGA.ga('set', 'anonymizeIp', true)
 
 const HeaderBar = styled.header`
     padding: 16px 0;
@@ -257,6 +258,7 @@ class App extends Component {
                         <a href="https://medium.com/@glenngijsberts" target="_blank" rel="noopener noreferrer">Medium</a>
                         <a href="https://www.linkedin.com/in/glenn-gijsberts-0341a463" target="_blank" rel="noopener noreferrer">LinkedIn</a>
                     </p>
+                    <p><small>Deze website maakt gebruik van google analytics</small></p>
                 </FooterSection>
             </MainContent>
         )
