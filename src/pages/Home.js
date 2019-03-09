@@ -5,7 +5,6 @@ import ReactGA from 'react-ga'
 import { colorPrimary, colorPrimaryDarker, borderRadius } from '../styles/theme'
 import PersonalSection from '../components/PersonalSection'
 import Services from '../components/Services'
-import services from '../assets/services'
 
 import portfolioTicketSwap from '../assets/portfolio-ticketswap.png'
 import portfolioSqits from '../assets/portfolio-sqits.png'
@@ -188,7 +187,7 @@ class Home extends Component {
                     and Multimedia Design in Den Haag.
                 </PersonalSection>
 
-                <Services services={services} />
+                <Services services={this.props.services} />
 
                 <ScrollableAnchor id={'work'}>
                     <WorkSection>
