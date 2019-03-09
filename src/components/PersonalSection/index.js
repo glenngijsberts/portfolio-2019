@@ -1,7 +1,11 @@
 import React from 'react'
 import styled from 'styled-components'
 import ReactGA from 'react-ga'
-import { colorPrimary, borderRadius, colorPrimaryDarker } from '../../styles/theme'
+import {
+    colorPrimary,
+    borderRadius,
+    colorPrimaryDarker,
+} from '../../styles/theme'
 import Button from '../Button'
 
 export const PersonalSection = styled.section`
@@ -38,6 +42,7 @@ export const PersonalSection = styled.section`
 
 export const StyledLink = styled.a`
     font-size: 16px;
+    line-height: 1.2;
     position: relative;
     font-family: inherit;
     font-weight: 400;
@@ -49,7 +54,7 @@ export const StyledLink = styled.a`
     justify-content: center;
     align-items: center;
     text-decoration: none;
-    background-color: ${(props) => props.ghost ? 'transparent' : colorPrimary};
+    background-color: ${props => (props.ghost ? 'transparent' : colorPrimary)};
     border: 1px solid ${colorPrimary};
     border-radius: ${borderRadius};
     color: white;
@@ -58,8 +63,10 @@ export const StyledLink = styled.a`
     transition-duration: 0.5s;
     transition-timing-function: ease-out;
 
-    &:hover, &:focus {
-        background-color: ${(props) => props.ghost ? colorPrimary : colorPrimaryDarker};
+    &:hover,
+    &:focus {
+        background-color: ${props =>
+            props.ghost ? colorPrimary : colorPrimaryDarker};
     }
 `
 
@@ -79,22 +86,29 @@ const PersonalSectionWrapper = (props) => {
         <PersonalSection>
             <div className="intro">
                 <h2>
-                    {title}
-                    {' '}
-                    <span role="img" aria-label="Fiyah">🔥</span>
+                    {title}{' '}
+                    <span role="img" aria-label="Fiyah">
+                        🔥
+                    </span>
                 </h2>
-                <p>
-                    {children}
-                </p>
+                <p>{children}</p>
 
                 <ButtonGroup>
                     <Button onClick={onClick} ghost={true}>
                         Bekijk mijn werk
                     </Button>
-                    <StyledLink href="https://medium.com/@glenngijsberts" target="_blank" onClick={() => ReactGA.event({
-                        category: 'Intro',
-                        action: 'Clicked on blogs button'
-                    })}>Lees mijn blogs</StyledLink>
+                    <StyledLink
+                        href="https://medium.com/@glenngijsberts"
+                        target="_blank"
+                        onClick={() =>
+                            ReactGA.event({
+                                category: 'Intro',
+                                action: 'Clicked on blogs button',
+                            })
+                        }
+                    >
+                        Lees mijn blogs
+                    </StyledLink>
                 </ButtonGroup>
             </div>
         </PersonalSection>

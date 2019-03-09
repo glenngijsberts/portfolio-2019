@@ -1,9 +1,14 @@
 import React from 'react'
 import styled from 'styled-components'
-import { colorPrimary, borderRadius, colorPrimaryDarker } from '../../styles/theme'
+import {
+    colorPrimary,
+    borderRadius,
+    colorPrimaryDarker,
+} from '../../styles/theme'
 
 const StyledButton = styled.button`
     font-size: 16px;
+    line-height: 1.2;
     position: relative;
     font-family: inherit;
     font-weight: 400;
@@ -15,7 +20,7 @@ const StyledButton = styled.button`
     justify-content: center;
     align-items: center;
     text-decoration: none;
-    background-color: ${(props) => props.ghost ? 'transparent' : colorPrimary};
+    background-color: ${(props) => (props.ghost ? 'transparent' : colorPrimary)};
     border: 1px solid ${colorPrimary};
     border-radius: ${borderRadius};
     color: white;
@@ -24,7 +29,8 @@ const StyledButton = styled.button`
     transition-duration: 0.5s;
     transition-timing-function: ease-out;
 
-    &:hover, &:focus {
+    &:hover,
+    &:focus {
         background-color: ${(props) => props.ghost ? colorPrimary : colorPrimaryDarker};
     }
 `
@@ -34,7 +40,7 @@ const Button = (props) => {
 
     return (
         <StyledButton onClick={onClick} {...props}>
-            { children }
+            {children}
         </StyledButton>
     )
 }
