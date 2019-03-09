@@ -45,8 +45,8 @@ const Services = (props) => {
 
     return (
         <ServicesSection>
-            {services.map((service) => (
-                <div className="service">
+            {services.map((service, index) => (
+                <div className="service" key={`service-${index}`}>
                     <h2>{service.title}</h2>
                     <p>{service.text}</p>
                 </div>

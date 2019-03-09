@@ -54,7 +54,7 @@ export const StyledLink = styled.a`
     justify-content: center;
     align-items: center;
     text-decoration: none;
-    background-color: ${props => (props.ghost ? 'transparent' : colorPrimary)};
+    background-color: ${(props) => (props.ghost ? 'transparent' : colorPrimary)};
     border: 1px solid ${colorPrimary};
     border-radius: ${borderRadius};
     color: white;
@@ -65,8 +65,7 @@ export const StyledLink = styled.a`
 
     &:hover,
     &:focus {
-        background-color: ${props =>
-            props.ghost ? colorPrimary : colorPrimaryDarker};
+        background-color: ${(props) =>  props.ghost ? colorPrimary : colorPrimaryDarker};
     }
 `
 
