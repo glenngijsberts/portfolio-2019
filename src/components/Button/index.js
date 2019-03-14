@@ -33,16 +33,24 @@ const StyledButton = styled.button`
     &:focus {
         background-color: ${(props) => props.ghost ? colorPrimary : colorPrimaryDarker};
     }
+
+    width: ${(props) => props.fullWidth ? '100%' : 'auto'};
 `
 
 const Button = (props) => {
-    const { children, onClick } = props
+    const { children, onClick, type } = props
 
     return (
-        <StyledButton onClick={onClick} {...props}>
+        <StyledButton onClick={onClick} type={type} {...props}>
             {children}
         </StyledButton>
     )
+}
+
+Button.defaultProps = {
+    type: 'text',
+    onClick: null,
+    fullWidth: false,
 }
 
 export default Button
