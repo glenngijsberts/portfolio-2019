@@ -20,7 +20,8 @@ import base from './firebase'
 /*
     Google analytics
 */
-ReactGA.initialize('UA-135828722-1')
+import { key } from './config/ga'
+ReactGA.initialize(key)
 ReactGA.ga('set', 'anonymizeIp', true)
 
 class App extends Component {
